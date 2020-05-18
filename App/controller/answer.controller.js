@@ -5,10 +5,10 @@ exports.createAnswer =((req,res)=>{
     // answer.save().then(res.json({msg:'create answer success'}))
     console.log(req.body);
     
-    // Answer.update({question:req.body.question},req.body,{upsert:true},(err)=>{
-    //     if(err) throw err
-    //     res.json({msg:'create answer success'})
-    // })
+    Answer.update({question:req.body.question},req.body,{upsert:true},(err)=>{
+        if(err) throw err
+        res.json({msg:'create answer success'})
+    })
 })
 
 exports.listAnswer = ((req,res)=>{
