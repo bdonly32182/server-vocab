@@ -7,6 +7,7 @@ let answerSchema = new schema({
     choiceB:String,
     choiceC:String,
     choiceD:String,
-    choiceCorrect:String
+    class:String,
+    answer:String
 }) 
 mongoose.model('Answer',answerSchema)

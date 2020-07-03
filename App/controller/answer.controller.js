@@ -3,7 +3,7 @@ const Answer = require('mongoose').model('Answer')
 exports.createAnswer =((req,res)=>{
     // let answer  = new Answer(req.body)
     // answer.save().then(res.json({msg:'create answer success'}))
-    console.log(req.body);
+    console.log(req.body.answer);
     
     Answer.update({question:req.body.question},req.body,{upsert:true},(err)=>{
         if(err) throw err
@@ -31,5 +31,14 @@ exports.AnswerByid = ((req,res,next,id)=>{
     }).catch(e=>{
         console.log('answer byid fail');
         
+    })
+})
+
+//react-native
+exports.randomAnswer =((req,res)=>{
+    const {category} = req.params
+    Answer.aggregate([{$match:{class:category}},{$sample:{size:50}}]).then(result=>{
+        console.log(result);
+        res.json(result)
     })
 })

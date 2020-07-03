@@ -5,5 +5,6 @@ module.exports=(app)=>{
     app.get('/answer/:id',answer.Answer)
     app.route('/answeredit/:id')
         .delete(answer.delAnswer)
+    app.get('/native/answer/:category',answer.randomAnswer)
     app.param('id',answer.AnswerByid)
 }

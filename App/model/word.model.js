@@ -6,7 +6,8 @@ let wordSchema = new Schema({
     mean:String,
     category:String,
     wordTosame:String,
-    class:String
+    class:String,
+    mark:[Object]
 })
 
 mongoose.model('Word',wordSchema)

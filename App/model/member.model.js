@@ -6,7 +6,6 @@ let UserScema = new Schema({
     name:String,
     password:String,
     bookmark:[Object],
-    point:Number,
     role:String
 })
 mongoose.model('User',UserScema)

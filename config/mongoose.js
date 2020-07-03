@@ -7,5 +7,6 @@ module.exports=()=>{
     require('../App/model/answer.model')
     require('../App/model/member.model')
     require('../App/model/word.model')
+    require('../App/model/bookmarkModel')
     return db
 }
