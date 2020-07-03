@@ -2,7 +2,12 @@
   "name": "server-toeic",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node":"12.13.1",
+    "npm":"6.12.1"
+  },
   "license": "MIT",
+  
   "scripts": {
     "start": "node server.js",
     "serve": "nodemon server.js",
