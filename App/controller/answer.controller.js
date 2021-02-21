@@ -37,7 +37,7 @@ exports.AnswerByid = ((req,res,next,id)=>{
 //react-native
 exports.randomAnswer =((req,res)=>{
     const {category} = req.params
-    Answer.aggregate([{$match:{class:category}},{$sample:{size:50}}]).then(result=>{
+    Answer.aggregate([{$match:{class:category}},{$sample:{size:3}}]).then(async(result)=>{
         console.log(result);
         res.json(result)
     })

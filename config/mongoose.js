@@ -3,7 +3,7 @@ const uri ="mongodb+srv://palit:ice123@cluster0-api4j.mongodb.net/test?retryWrit
 
 module.exports=()=>{
     mongoose.set('debug',true)
-    let db = mongoose.connect(uri,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true})
+    let db = mongoose.connect(uri,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true}).catch(err=>console.log(err))
     require('../App/model/answer.model')
     require('../App/model/member.model')
     require('../App/model/word.model')

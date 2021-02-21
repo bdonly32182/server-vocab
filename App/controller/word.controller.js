@@ -37,11 +37,14 @@ exports.randomword =((req,res)=>{
     const {category} = req.params
     console.log(category);
     
-   const word = Word.aggregate([{$match:{class:category}},{$sample:{size:50}}]).then(result=>{
-       console.log(result);
-       res.json(result)
-   })
-   
+//    const word = Word.aggregate([{$match:{class:category}},{$sample:{size:50}}]).then(result=>{
+//        console.log(result);
+//        res.json(result)
+//    })
+     Word.aggregate([{$match:{class:category}}]).then(result=>{
+    console.log(result);
+    res.json(result)
+})
 })
 
 //twin api

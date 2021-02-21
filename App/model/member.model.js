@@ -5,7 +5,7 @@ let UserScema = new Schema({
     email:{type:String,unique:true},
     name:String,
     password:String,
-    bookmark:[Object],
+    // bookmark:[Object],
     role:String
 })
 mongoose.model('User',UserScema)

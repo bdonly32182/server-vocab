@@ -12,8 +12,10 @@ exports.saveword =((req,res)=>{
     // Bookmark.findById({user_id:req.user.id},{$addToSet:{bookmark:req.body.vocabs}})
     //     res.json({msg:'save success'})
 })
-exports.cancleword = ((req,res)=>{
-    Word.findById({_id:req.params.id},{$pull:{mark:req.user.id}})
+exports.cancleword = (async(req,res)=>{
+
+    let book = await Bookmark.deleteOne({$and:[{'bookmark.word':req.body.bookmark.word},{user_id:req.user.id}]});
+    
     res.json({msg:'cancle word success'})
 })
 exports.bookmarks =((req,res)=>{
